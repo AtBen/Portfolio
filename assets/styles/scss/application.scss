@@ -1,0 +1,21 @@
+//BASE
+@import "config/variables";
+@import "config/colors";
+@import "config/fonts";
+@import "config/fonts-icons";
+@import "config/mixins";
+
+//BOOTSTRAP
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//TEMPLATE
+@import "template/btn";
+@import "template/loader";
+@import "template/global";
+@import "template/header";
+@import "template/section";
+@import "template/works";
+@import "template/about";
+@import "template/contact";
+@import "template/foot";

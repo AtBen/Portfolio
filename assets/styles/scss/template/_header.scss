@@ -1,0 +1,182 @@
+/* Navbar - from bootstrap  */
+.navbar-pexel {
+
+	@include _box-shadow(0 1px 1px rgba(0,0,0,.1));
+	background-color:white;
+
+	.navbar-brand {
+		@include _css3(transition,all 250ms);
+		@extend .font--secondary;
+
+		height: auto;
+		margin: 35px 30px 30px 0;
+		padding: 0 10px;
+
+		font-size: 1.7em;
+		font-weight: 700;
+
+		@media (min-width: $screen-md-min) {
+			/* Small nav */
+			.reduce-nav &{
+				margin: 20px 30px 15px 10px;
+			}
+		}
+
+		/* Tablet */
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+			margin: 25px 0;
+			padding: 0 15px;
+		}
+
+		/* Mobile */
+		@media (max-width: $screen-xs-max) {
+			margin: 20px 0;
+		}
+	}
+
+	.navbar-nav {
+
+		/* Mobile */
+		@media (max-width: $screen-xs-max) {
+			margin: 0;
+		}
+
+		li {
+
+			a {
+				@extend .font--primary;
+
+				@include _css3(transition,all 250ms);
+				@include _border-radius(4px);
+
+				margin: 30px 10px;
+				padding: 3px 6px 2px;
+
+				font-size: .9em;
+				font-weight: 400;
+				text-transform: uppercase;
+				color: $C-desc;
+
+				border-style : solid;
+				border-width: 2px;
+				border-color: transparent;
+				background-color: white;
+
+				@media (min-width: $screen-md-min) {
+					/* Small nav */
+					.reduce-nav &{
+						margin: 15px 10px;
+					}
+				}
+
+				/* Tablet */
+				@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+					margin: 20px 5px;
+				}
+
+				/* Mobile */
+				@media (max-width: $screen-xs-max) {
+					margin: 10px 0;
+					padding: 8px 6px 5px;
+
+					text-align: center;
+					font-size: 1em;
+				}
+			}
+
+			/* No Touch device */
+			.is--notouch &:not(.is--active):hover a,&:active a{
+				border-color: $B-nav-focus;
+			}
+
+			&.is--active a{
+				
+				color: $C-main;
+				border-color: $C-main;
+
+				/* Mobile */
+				@media (max-width: $screen-xs-max) {
+					color: white;
+					background-color: $C-main;
+					border-color: transparent;
+				}
+			}
+		}
+
+		&.navbar-social {
+
+			/* Mobile */
+			@media (max-width: $screen-xs-max) {
+				text-align: center;
+			}
+
+			li {
+
+				/* Mobile */
+				@media (max-width: $screen-xs-max) {
+					display: inline-block;
+				}
+
+				a{
+					@include _round(40px);
+					padding: 0;
+					margin: 25px 10px;
+
+					line-height: 44px;
+					text-align: center;
+
+					color: lighten($C-desc,10%);
+					border-color: $B-nav-focus;
+					background-color: white;
+
+					@media (min-width: $screen-md-min) {
+
+						/* Small nav */
+						.reduce-nav & {
+							@include _round(34px);
+							line-height: 36px;
+							font-size: .8em;
+							margin: 13px 5px 0 5px;
+						}
+					}
+
+					/* Tablet */
+					@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+						@include _round(34px);
+						line-height: 40px;
+						margin: 18px 5px 0;
+					}
+
+					/* Mobile */
+					@media (max-width: $screen-xs-max) {
+						margin: 15px 5px;
+					}
+				}
+
+				/* No touch device */
+				.is--notouch &:hover a,&:active a{
+
+					color: white;
+					background-color: $C-main;
+					border-color: $C-main !important;
+				}
+
+			}
+			.icon{
+				font-size: 1.5em;
+			}
+		}
+	}
+	
+	.navbar-toggle {
+
+		margin: 13px 13px 0 0;
+
+		border: 1px solid $B-navbar-toggle;
+
+		.icon-bar {
+			background-color: $B-navbar-toggle;
+		}
+		
+	}
+}

@@ -1,0 +1,57 @@
+/* Btn - from boostrap */
+.btn{
+	@include _css3(transition,all 250ms);
+	display: inline-block;
+	vertical-align: middle;
+	.icon{
+		margin: 0 5px 0 0;
+		font-size: 1.1em;
+	}
+
+	&:active{
+		@include _box-shadow(none);
+	}
+}
+
+/* Grey version */
+.btn.btn-grey {
+	@extend .font--primary;
+	@include _border-radius(4px);
+	padding: 10px 20px;
+	font-size: 1.1em;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: $C-desc;
+	border-style: solid;
+	border-width: 2px;
+	border-color: $B-btn-secondary;
+	background-color: transparent;
+
+	/* No touch device */
+	.is--notouch &:hover,&:active{
+		color: $C-main;
+		border-color: $C-main;
+	}
+}
+
+/* Green version */
+.btn.btn-green {
+	@extend .font--primary;
+	@include _border-radius(4px);
+
+	padding: 10px 20px;
+
+	font-size: 1.1em;
+	font-weight: 400;
+	text-transform: uppercase;
+
+	color: $C-white;
+	background-color: $C-main;
+
+	/* No touch device */
+	.is--notouch &:hover,&:active{
+
+		color: $C-white;
+		background-color: darken($C-main,5%);
+	}
+}

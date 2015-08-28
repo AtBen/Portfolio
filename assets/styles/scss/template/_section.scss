@@ -1,0 +1,129 @@
+/* Introduction */
+.intro{
+	padding: 150px 0 0;
+
+	background:
+		linear-gradient(
+			rgba(18, 43, 64, 0.6),
+			rgba(18, 43, 64, 0.6)
+		),
+		url("bg/bg-home.jpg") no-repeat center center fixed;
+
+	@include _css3( background-size, cover);
+
+	/* Medium device */
+	@media (min-width:$screen-md-min) and (max-width: $screen-md-max) {
+		padding: 120px 0 0;
+	}
+
+	/* Mobile & Tablet */
+	@media (max-width: $screen-sm-max) {
+		padding: 60px 0 20px;
+	}
+	/* Mobile */
+	@media (max-width: $screen-xs-max) {
+		background:
+		linear-gradient(
+						rgba(18, 43, 64, 0.6),
+						rgba(18, 43, 64, 0.6)
+		),
+		url("bg/bg-home.jpg") no-repeat center center;
+	}
+}
+
+.intro__desc{
+
+	@extend .font--primary;
+
+	color: $C-white;
+
+	h1{
+		margin: 30px 0 20px;
+		font-size: 2.5em;
+
+		/* Mobile, Tablet & Medium device */
+		@media (max-width: $screen-md-max) {
+			margin: 30px 0 10px;
+			font-size: 2.2em;
+		}
+	}
+
+	p{
+		margin: 20px 0 25px;
+
+		font-size: 2em;
+		font-weight: 300;
+
+		/* Mobile & Tablet */
+		@media (max-width: $screen-md-max) {
+
+			margin: 10px 0 15px;
+			font-size: 1.5em;
+		}
+	}
+
+	.btn {
+		margin: 0 10px 0 0;
+
+		min-width:220px;
+
+		/* Medium device */
+		@media (min-width:$screen-md-min) and (max-width: $screen-md-max) {
+			margin: 0 5px 0 0;
+		}
+
+		/* Mobile & Tablet */
+		@media (max-width: $screen-sm-max) {
+			margin: 10px 5px;
+		}
+	}
+
+	/* Mobile & Tablet */
+	@media (max-width: $screen-sm-max) {
+		text-align: center;
+	}
+}
+
+.intro__img{
+
+	max-height: 350px;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+	}
+}
+
+/* Byword section */
+.byword{
+	position: relative;
+	z-index: 11;
+	@extend .font--primary;
+	@include _box-shadow(0 1px 1px rgba(0,0,0,.1));
+
+	h3{
+		margin: 70px 0 60px;
+
+		text-align:center;
+		line-height: 1.4;
+		letter-spacing: .05em;
+		font-size: 2em;
+		font-weight: 300;
+		color: $C-desc;
+
+		strong{
+			font-weight: 400;
+			color: #333333;
+		}
+
+		/* Mobile */
+		@media (max-width: $screen-xs-max) {
+			margin: 40px 10px;
+			font-size: 1.6em;
+			
+			br {
+				display: none;
+			}
+		}
+	}
+}

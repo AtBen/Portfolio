@@ -1,0 +1,105 @@
+/* Import */
+@font-face {
+	font-family: "pexel";
+	src:url("fonts/pexel.eot");
+	src:url("fonts/pexel.eot?#iefix") format("embedded-opentype"),
+	url("fonts/pexel.woff") format("woff"),
+	url("fonts/pexel.ttf") format("truetype"),
+	url("fonts/pexel.svg#pexel") format("svg");
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+/* Rules */
+[data-icon]:before {
+	font-family: "pexel" !important;
+	content: attr(data-icon);
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+
+	font-family: "pexel" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Icons */
+.icon--projects:before {
+	content: "h";
+}
+.icon--email:before {
+	content: "b";
+}
+.icon--skype:before {
+	content: "c";
+}
+.icon--github:before {
+	content: "d";
+}
+.icon--facebook:before {
+	content: "e";
+}
+.icon--twitter:before {
+	content: "f";
+}
+.icon--linkedin:before {
+	content: "g";
+}
+.icon--html:before {
+	content: "i";
+}
+.icon--css:before {
+	content: "j";
+}
+.icon--performance:before {
+	content: "k";
+}
+.icon--design:before {
+	content: "l";
+}
+.icon--fork:before {
+	content: "m";
+}
+.icon--js:before {
+	content: "n";
+}
+.icon--map:before {
+	content: "a";
+}
+.icon--phone:before {
+	content: "o";
+}
+
+.icon--close:before {
+	content: "r";
+}
+
+.icon--next:before {
+	content: "p";
+}
+
+.icon--prev:before {
+	content: "q";
+}
+
+.icon--skills:before {
+	content: "s";
+}

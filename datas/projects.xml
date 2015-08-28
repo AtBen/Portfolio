@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Work item
+<item url-anchor="//url anchor" type="//work type - web/mail/blog">
+
+    <title> //work title </title>
+    <desc> //work desc </desc>
+    <date> //work date </date>
+    <company> //company name</company>
+    <agency> //agence name </agency>
+    <url-project link=""> //url project </url-project>
+
+    //1 to N
+    <images>
+        <media alt="//media alt #1"> //url media project </media>
+    </images>
+
+    //1 to N
+    <tags>
+        <name> //tag name </name>
+    </tags>
+
+</item>
+ /Work item -->
+
+<projects>
+	<item url-anchor="work-item-sample" type="web">
+	
+	    <title> Work title sample </title>
+	    <desc>It's a desc sample. You can add 
+	    line or anything.
+	    
+	    But you can't add this "&"
+	    </desc>
+	    <date> 2015/08/28 </date>
+	    <company> Company name (not required)</company>
+	    <agency> Agence name (not required)</agency>
+	    <url-project link="http://real-url.tld"> Text url</url-project>
+	
+	    <images>
+	        <media alt="Alt of media #1">/datas/projects/my-thumb-1.png(Url from root)</media>
+	    </images>
+	
+	    <tags>
+	        <name>Tag 1 </name>
+	        <name>Tag 2 </name>
+	    </tags>
+	
+	</item>
+</projects>

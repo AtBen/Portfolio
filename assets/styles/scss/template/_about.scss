@@ -1,0 +1,202 @@
+/* About part */
+.about__part{
+
+	margin: 0 0 30px 0;
+	border-top:1px solid $B-about;
+}
+
+.about__title{
+
+	margin: 50px 0;
+
+	text-align: center;
+	letter-spacing: .05em;
+	font-size: 2em;
+	color:$C-about-title;
+
+	/* Mobile */
+	@media (max-width: $screen-xs-max) {
+		margin: 30px 0;
+		font-size: 1.8em;
+	}
+}
+
+/* Reasons/services section*/
+.reasons__list {
+	counter-reset: counter-reasons;
+}
+
+.reasons__item {
+	margin: 0 0 10px 0;
+	counter-increment: counter-reasons;
+
+	/* Mobile */
+	@media (max-width: $screen-xs-max) {
+		margin: 15px 0;
+	}
+}
+
+.reasons__img{
+
+	/* Mobile */
+	@media (max-width: $screen-xs-max) {
+		margin: 15px 0 25px 0;
+	}
+
+	img{
+		width: 100%;
+	}
+}
+
+.reasons__itemTitle{
+
+	position: relative;
+	margin: 0;
+	padding: 9px 0 20px 54px;
+
+	font-size: 1.6em;
+	font-weight: 400;
+	color: $C-about-title;
+
+	/* Mobile */
+	@media (max-width: $screen-xs-max) {
+		padding: 5px 0 20px 44px;
+		font-size: 1.5em;
+	}
+
+	&:before{
+		@include _round(44px);
+
+		position: absolute;
+		top: 0; left: 0;
+
+		content:'0' counter(counter-reasons);
+		text-align: center;
+		line-height: 44px;
+
+		font-size: 0.9em;
+		color: $C-white;
+		background-color: $C-about-title;
+
+		/* Mobile */
+		@media (max-width: $screen-xs-max) {
+
+			@include _round(34px);
+
+			line-height: 34px;
+			font-size: 0.8em;
+		}
+	}
+}
+
+.reasons__itemDesc{
+
+	font-size: 1.3em;
+	color: $C-desc;
+
+	/* Mobile */
+	@media (max-width: $screen-xs-max) {
+		text-align:justify;
+	}
+}
+
+
+/* Skills section*/
+.skills__item {
+
+	margin: 30px 0;
+
+	/* Mobile */
+	@media (max-width: $screen-xs-max) {
+		margin: 20px 0 10px;
+		text-align: center;
+	}
+}
+
+.skills__itemTitle {
+
+	position: relative;
+	margin: 0;
+	padding: 18px 0 16px 75px;
+
+	font-size: 1.6em;
+	font-weight: 400;
+	color: $C-about-title;
+
+	/* Mobile */
+	@media (max-width: $screen-xs-max) {
+		padding: 0;
+	}
+
+
+	.icon {
+		@include _round(60px);
+
+		position: absolute;
+		top: 0; left: 0;
+
+		line-height: 55px;
+
+		text-align: center;
+		font-size: 28px;
+		color: $C-main;
+
+		border: 3px solid $C-main;
+
+		/* Mobile */
+		@media (max-width: $screen-xs-max) {
+			display: none;
+		}
+	}
+}
+
+.skills__itemDesc{
+
+	margin: 10px 0 0 75px;
+	font-size: 1.3em;
+	color: $C-desc;
+
+	/* Mobile */
+	@media (max-width: $screen-xs-max) {
+		margin: 10px 0;
+	}
+}
+
+.btn.skills__cv {
+
+	display: block;
+	width: 350px;
+	margin: 60px auto 40px;
+
+	/* Mobile */
+	@media (max-width: $screen-xs-max) {
+		width: auto;
+		margin: 20px auto;
+	}
+}
+
+/* Brand section */
+.brand__list {
+
+	@include _border-radius(5px);
+	padding: 20px;
+	text-align: center;
+
+	background-color: $BG-secondary;
+
+	li {
+		@extend .font--secondary;
+		display: inline-block;
+		margin: 10px;
+
+		font-size: 2em;
+		font-weight: 400;
+		color: darken($BG-secondary,20%);
+
+		/* Mobile */
+		@media (max-width: $screen-xs-max) {
+			display: block;
+			font-size: 1.5em;
+		}
+	}
+}

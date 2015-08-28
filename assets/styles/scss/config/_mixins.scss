@@ -1,0 +1,183 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+/**
+* Create a full opacity value
+*
+	`@include opacity(50);`
+*/
+@mixin _opacity($opacity){
+	zoom: 1;
+	opacity: $opacity/100;
+	filter: alpha(opacity=$opacity);
+}
+
+/**
+* Create a full border radius value with vendor
+*
+	`@include _border-radius(10px);`
+*/
+@mixin _border-radius($radius,$radius2:'',$radius3:'',$radius4:'') {
+
+	@if $radius4 != '' {
+		@include _css3(border-radius,$radius $radius2 $radius3 $radius4);
+	}
+	@else if $radius2 != ''{
+		@include _css3(border-radius,$radius $radius2);
+	}
+	@else {
+		@include _css3(border-radius,$radius);
+	}
+}
+
+/**
+* Create a round
+*
+	`@include _round(10px);`
+*/
+@mixin _round($width) {
+	@include _border-radius($width/2);
+	width: $width !important;
+	height: $width !important;
+	overflow: hidden;
+}
+
+/**
+* Create a full box shadow value with vendor
+*
+	`@include _box-shadow();`
+*/
+@mixin _box-shadow($param){
+	@include _css3(box-shadow,$param);
+}
+
+
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a single value
+ *
+   `@include _font-size(10px);`
+ */
+@mixin _font-size($font-size, $line-height:true){
+	font-size: $font-size;
+	font-size: ($font-size / $base-font-size)*1rem;
+
+	@if $line-height == true{
+		line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+	}
+}
+
+/**
+* Create a specitication for before animation
+	`@include before-font-animation{text-decoration:none;}`
+*/
+@mixin before-icon-animation {
+
+	&[class*=" icon--"]:before,
+	&[class^="icon--"]:before{
+		@extend .x-animation;
+		display: inline-block;
+	}
+
+	/*NO TOUCH*/
+	.is--notouch &:hover[class*=" icon--"]:before,
+	.is--notouch &:hover[class^="icon--"]:before{
+		@content;
+	}
+}
+
+
+/**
+ * Style any number of headings in one fell swoop, e.g.:
+ *
+   .foo{
+       @include _headings(1, 3){
+           color:#BADA55;
+       }
+    }
+ *
+ * With thanks to @lar_zzz, @paranoida, @rowanmanning and ultimately
+ * @thierrylemoulec for refining and improving my initial mixin.
+ */
+@mixin _headings($from: 1, $to: 6){
+	%base-heading {
+		@content
+	}
+
+	@if $from >= 1 and $to <= 6{
+		@for $i from $from through $to{
+			h#{$i}{
+				@extend %base-heading;
+			}
+		}
+	}
+}
+
+
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `@include _css3(border-radius, 4px);`
+ *
+ */
+@mixin _css3($property, $value){
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+/**
+ * Create CSS keyframe animations for all vendors in one go, e.g.:
+ *
+   .foo{
+       @include _css3(animation, shrink 3s);
+   }
+
+   @include _keyframe(shrink){
+       from{
+           font-size:5em;
+       }
+   }
+
+   shrink is the animation name
+ *
+ * Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
+ */
+@mixin _keyframe ($animation){
+	@-webkit-keyframes #{$animation}{
+		@content;
+	}
+
+	@-moz-keyframes #{$animation}{
+		@content;
+	}
+
+	@-ms-keyframes #{$animation}{
+		@content;
+	}
+
+	@-o-keyframes #{$animation}{
+		@content;
+	}
+
+	@keyframes #{$animation}{
+		@content;
+	}
+}
+
+
+/**
+ * Force overly long spans of text to truncate, e.g.:
+ *
+   `@include truncate(100%);`
+ *
+ * Where `$truncation-boundary` is a united measurement.
+ */
+@mixin _truncate($truncation-boundary){
+	max-width: $truncation-boundary;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
